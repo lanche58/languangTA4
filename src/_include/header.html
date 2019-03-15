@@ -1,55 +1,47 @@
-<div class="header clearfix">
-    <a href="index.html" class="logo"><img src="images/logo.png" alt=""><img src="images/logo1.png" class="m" alt=""></a>
-    <ul class="nav">
-        <li><a href="index.html" @@if (context.index==='act') { class="act" }>首&nbsp;&nbsp;页</a></li>
-        <li><a href="about.html" @@if (context.about==='act') { class="act" }>走进厚普</a>
-            <div class="pull-nav">
-                <a href="about.html?#ab1" class="ab">公司简介</a>
-                <a href="about.html?#ab2" class="ab">发展历程</a>
-                <a href="about.html?#ab3" class="ab">企业文化</a>
-                <a href="about.html?#ab4" class="ab">资质荣誉</a>
-                <a href="about.html?#ab5" class="ab">厚普期刊</a>
+<div class="header">
+    <div class="pw clearfix">
+        <a href="index.html" class="logo"><img src="img/LOGO.png" alt=""></a>
+        <div class="r">
+            <ul class="nav">
+                <li><a href="index.html" @@if (context.index==='act') { class="act" }>首页</a></li>
+                <li><a href="#" @@if (context.about==='act') { class="act" }>关于我们</a></li>
+                <li><a href="#" @@if (context.news11==='act') { class="act" }>核心主业</a></li>
+                <li><a href="#" @@if (context.product==='act') { class="act" }>产品系</a></li>
+                <li><a href="news.html" class="news" @@if (context.news==='act') { class="act" }>新闻中心</a></li>
+                <li><a href="#" @@if (context.case==='act') { class="act" }>投资者关系</a></li>
+                <li><a href="#" @@if (context.investor==='act') { class="act" }>公益蓝光</a></li>
+                <li><a href="#" @@if (context.job==='act') { class="act" }>人力资源</a></li>
+                <li><a href="#" @@if (context.branch==='act') { class="act" }>加入我们</a></li>
+                <li><a href="#" @@if (context.contact==='act') { class="act" }>更多</a></li>
+            </ul>
+            <div class="tools">
+                <p><span class="ico" style="background-image: url(img/放大镜.png);"></span></p>
+                <p><span class="ico" style="background-image: url(img/二维码.png);"></span><span class="aw"></span></p>
+                <p><span class="ico" style="background-image: url(img/地球.png);"></span><span class="aw"></span></p>
             </div>
-        </li>
-        <li><a href="news.html" @@if (context.news==='act') { class="act" }>新闻中心</a>
-            <div class="pull-nav">
+        </div>
+    </div>
+    <div class="pull-nav">
+        <div class="pw clearfix">
+            <div class="news-nav">
                 <a href="news.html">公司新闻</a>
-                <a href="news.html">行业动态</a>
-                <a href="news1.html">业务公告</a>
+                <a href="news.html">项目动态</a>
+                <a href="#">媒体看蓝光</a>
+                <a href="#">蓝光V刊</a>
+                <a href="#">蓝光影像</a>
             </div>
-        </li>
-        <li><a href="product.html" @@if (context.product==='act') { class="act" }>产品中心</a>
-            <div class="pull-nav">
-                <a href="product.html">车用</a>
-                <a href="product.html">船用</a>
-                <a href="product.html">民用</a>
-                <a href="product.html">氢能</a>
-                <a href="product.html">核心零部件</a>
-                <a href="product.html">物联网</a>
-            </div>
-        </li>
-        <li><a href="service.html" @@if (context.service==='act') { class="act" }>营销服务</a></li>
-        <li><a href="case.html" @@if (context.case==='act') { class="act" }>工程案例</a>
-            <div class="pull-nav">
-                <a href="case.html">国内案例</a>
-                <a href="case.html">国际案例</a>
-            </div>
-        </li>
-        <li><a href="investor.html" @@if (context.investor==='act') { class="act" }>投资者关系</a>
-            <!-- <div class="pull-nav">
-                <a href="investor.html">信息披露</a>
-                <a href="investor.html">年报等公开信息</a>
-            </div> -->
-        </li>
-        <li><a href="job.html" @@if (context.job==='act') { class="act" }>人力资源</a>
-            <div class="pull-nav">
-                <a href="job.html">人才招聘</a>
-                <a href="job1.html">员工风采</a>
-            </div>
-        </li>
-        <li><a href="branch.html" @@if (context.branch==='act') { class="act" }>分子公司</a></li>
-        <li><a href="contact.html" @@if (context.contact==='act') { class="act" }>联系我们</a></li>
-    </ul>
+            <ul class="pv-list">
+                <li><a href="#" class="scapic">
+                    <div class="pai"><img src="img/ix_i1.jpg" alt=""></div>
+                    <p class="nowti">新起点、新征程、新蓝图</p>
+                </a></li>
+                <li><a href="#" class="scapic">
+                    <div class="pai"><img src="img/ix_i2.jpg" alt=""></div>
+                    <p class="nowti">为美好生活而来，因美好生活而成</p>
+                </a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 <!-- header -->
 <div class="menu-handler">

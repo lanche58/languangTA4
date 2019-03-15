@@ -2,878 +2,139 @@
 @import "color";
 @import "repeat";
 .header{
-    height: 104px; line-height: 24px;
-    .logo{ float: left; margin: (104px - 64px) / 2 0 0 (58 / 1920) * 100%; width: 483px; 
-        .m{ display: none; }
+    height:72px;
+    line-height: 24px;
+    .logo{
+        float: left;
+        width: 139px;
+        transition: 0ms;
+        margin-top: (72px - 26px) / 2;
     }
     .nav{
-        float: right; margin-right: (122 - 22) / 1920 * 100%;
-        li{ float: left; position: relative;
-            > a{ display: block; position: relative; padding: (104px - 24px) / 2 (44px / 2); font-size: 15px; font-weight: bold;
-                &:before{ @include ba; z-index: 9; bottom: -3px + 10px; left: 50%; margin-left: -3px; width: 6px; height: 6px; background: #fff; transform: rotate(45deg); @include hide; @include mt4; }
-                &.act2, &.act, &:hover{ background: $mc1; color: #fff; }
-                &.act2:before{ bottom: -3px; @include show; }
+        float: left;
+        li{
+            float: left;
+            padding: 0 12px - 8px;
+            > a{
+                display: block;
+                padding: (72px - 24px) / 2 8px;
+                position: relative;
+                &:before{
+                    @include hl($mc1, 6px);
+                }
+                &:hover, &.act{
+                    &:before{
+                        @include hlw;
+                    }
+                }
             }
         }
     }
-    .pull-nav{
-        @include plr; top: 100%; padding: 15px 0; background: $mc1; display: none;
-        a{ display: block; padding: 7px 5px; text-align: center; line-height: 1.4; color: #fff; 
-            &:hover{ background: $mc2; }
+    .tools{
+        float: left;
+        margin-left: 30px - 12px;
+        padding: (72px - 24px) / 2 25px;
+        background: $hc3;
+        > p{
+            float: left;
+            height: 24px;
+            + p{
+                margin-left: 30px;
+            }
+        }
+        span{
+            float: left;
+            height: 100%;
+            background-position: center;
+        }
+        .ico{
+            width: 24px;
+        }
+        .aw{
+            margin-left: 8px;
+            width: 9px;
+            background-image: url('../img/联合 5.png');
         }
     }
 }
-.mtop{ height: 104px; }
-.menu-handler{
-    background: $mc1;
-    .burger{ background: #fff; }
-    &.active{
-        background: none;
-        .burger{ background: $mc1; }
-    }
+
+.pull-nav{
+    background: #fff;
+    background:rgba(255,255,255,.98);
+    padding: (60px - 7px) 0 60px 0;
+    display: none;
 }
-.navMobile{
-    border-top: 10px solid $mc1; padding-top: 50px;
-    a{ display: block; padding-right: 15px; padding-left: 35px; line-height: 1.4; }
-    dd > a{ padding-top: 12px; padding-bottom: 12px; font-size: 18px; color: $fc1; 
-        &.act{ background: $mc1; color: #fff; }
-    }
-    .mtv{ background: $hc2; padding: 10px 0; display: none;
-        a{ padding-top: 6px; padding-bottom: 6px; font-size: 16px; }
-    }
-}
-.footer{
-    background: $fc1; padding: 50px 0; font-size: 12px; line-height: 24px; color: $fc3;
-    a{ color: $fc3; 
-        @media screen and (min-width:1025px) {
-            &:not(.na):hover{ color: $mc1; }
+
+.news-nav{
+    float: left;
+    width: 200px;
+    line-height: 24px;
+    a{
+        display: block;
+        position: relative;
+        padding: (38px - 24px) / 2 0;
+        border-bottom: 1px solid $hc1;
+        font-size:16px;
+        color: $fc3;
+        &:before{
+            @include ba;
+            top: 50%;
+            margin-top: -5px;
+            right: 18px;
+            width: 6px;
+            height: 9px;
+            background: url('../img/组 116.png') no-repeat center;
         }
-    }
-    .foo-links{ margin-bottom: 5px; }
-    .l{ padding-top: 30px; }
-}
-.foo-links{
-    font-size: 14px;
-    a{ color: #fff; }
-}
-.foo-ma{
-    width: 85px;
-    .icon{ margin-top: 6px; background: $mc1; color: #fff; font-size: 12px; text-align: center; 
-        &:before{ font-size: 14px; margin-right: 4px; }
-    }
-}
-.pbanner{
-    color: #fff;
-    a{ color: #fff; }
-    .txts{ position: absolute; top: 0; bottom: 0; left: 5%; right: 5%; text-align: center; }
-    .ch{ font-size: 50px; font-weight: bold; }
-    .en{ margin-top: 10px; font-size: 24px; text-transform: uppercase; }
-}
-.pnav{
-    height: 60px; border-bottom: 1px solid $hc3; line-height: 24px;
-    @media screen and (max-width:1024px) {
-        position: relative; @include sx;
-    }
-    @media screen and (max-width:641px) {
-        height: 50px;
-    }
-    ul{
-        @media screen and (max-width:1024px) {
-            position: absolute; top: 0; left: 5%; padding-right: 5%; white-space: nowrap; min-width: 100%; @include bs;
-        }  
-    }
-    a{ display: block; padding: (60px - 24px) / 2 0; color: $fc3; 
-        @media screen and (max-width:641px) {
-            padding: (50px - 24px) / 2 0;
-        }
-        &:before{ content: ""; display: inline-block; vertical-align: middle; margin-right: 8px; @include c(12px); border: 3px solid $hc3; @include bs; @include mt3; }
-        &.act{
-            &:before{ border-color: $mc1; }
-        }
-        @media screen and (min-width:1025px) {
-            &:hover{
-                &:before{ border-color: $mc1; }
+        &:hover{
+            color: $mc1;
+            &:before{ 
+                background: url('../img/组-1162.png') no-repeat center;
             }
         }
     }
-    li + li{ margin-left: 116px; 
-        @media screen and (max-width:1366px) {
-            margin-left: 96px;
-        }
-        @media screen and (max-width:601px) {
-            margin-left: 16vw;
+}
+
+.pv-list{
+    float: right;
+    padding-top: 7px;
+    a{
+        color: $fc3;
+        &:hover{
+            color: $mc1;
         }
     }
+    li{
+        width: 275px;
+        float: left;
+        + li{
+            margin-left: 30px;
+        }
+    }
+    .pai{
+        padding-bottom: (170 / 275) * 100%;
+    }
+    .nowti{
+        text-align: center;
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 10px;
+    }
 }
+
+.mtop{
+    height: 72px;
+}
+
 .banner{
     .slick-dots{
-        bottom: 40px;
-        li{ border: 3px solid #fff; background: none; cursor: pointer; 
-            @media screen and (min-width:1025px) {
-                &:hover{ background: #fff; }
-            }
-        }
-        .slick-active{ background: #fff; }
-    }
-    .txts{
-        position: absolute; left: 5%; right: 5%; top: 0; bottom: 0; color: #fff;
-        .ch{ font-size: 80px; font-weight: bold; }
-        .en{ position: relative; margin-top: 10px; padding-top: 15px; text-transform: uppercase; font-size: 24px; 
-            &:before{ @include ba; top: 0; left: 50%; margin-left: -(144px / 2); width: 144px; height: 1px; background: #fff; }
-        }
-    }
-    .pic2{ position: absolute; top: 0; left: 0; }
-}
-.banner-video{
-    position: absolute; z-index: 199; bottom: 30px; right: 50px; width: 168px; background: #fff; cursor: pointer; @include mt3;
-    .pai{ border: 2px solid #fff; padding-bottom: (86 / 168) * 100%; @include mt3;
-        &:after{ @include ba; @include tblr; @include b5; }
-    }
-    .sj{ position: absolute; z-index: 9; left: 50%; top: 50%; margin: -8px 0 0 -7px; border-top-width: 8px; border-bottom-width: 8px; border-left-width: 14px; color: #fff; @include mt3; }
-    .nowti{ padding: 0 5%; line-height: 28px; text-align: center; font-size: 12px; }
-    @media screen and (min-width:1025px) {
-        &:hover{
-            background: $mc1; color: #fff;
-            .pai{ border-color: $mc1; }
-            .sj{ color: $mc1; }
-        }
-    }
-}
-.hot-news{
-    width: 66.7%; float: left;
-    .ix-ti{ margin-bottom: 26px - 4px; }
-}
-.hot-news-list{
-    background: $mc1;
-    .item > a{ display: block; overflow: hidden; color: #fff; 
-        @media screen and (min-width:1025px) {
-            &:hover .view-more{ background: #fff; color: $mc1; }
-        }
-    }
-    .picbox{ width: 62%; float: left; }
-    .pai{ padding-bottom: (425 / 530) * 100%; 
-        &:after{ @include ba; @include tblr; background: url(../images/shadow.png) repeat-x left bottom; }
-    }
-    .txts{ padding: 55px 25px 0 25px; overflow: hidden; }
-    .date{ margin-bottom: 27px - 7px; font-size: 12px; }
-    .nowti{ padding-bottom: 20px - 6px; margin-bottom: 38px - 6px; border-bottom: 1px solid #fff; font-size: 18px; }
-    .tx{ margin-bottom: 50px; height: 24px * 4; }
-    .slick-dots{ right: auto; bottom: 20px; width: 62%; 
-        li{ background: #fff; 
-            @media screen and (min-width:1025px) {
-                &:hover{ background: $mc1; }
-            }
-        }
-        .slick-active{ background: $mc1; }
-    }
-}
-.btn{ @include di; @include bs; @include mt3; }
-.view-more{ width: 118px; border: 1px solid #fff; line-height: 26px; text-align: center; white-space: nowrap; font-size: 12px; }
-.ix-ti{ line-height: 1.4; font-size: 16px; color: $fc1; 
-    &:before{ content: ""; margin: 0 15px 5px 0; @include di; @include c(12px); border: 3px solid $mc1; @include bs; }
-}
-.ix-news{ float: right; width: 30.4%; 
-    .in-nav{ margin-bottom: 56px - 16px + 5px; }
-}
-.in-nav{
-    li{ float: left; cursor: pointer;
-        + li{ margin-left: 40px; }
-        &.act{ 
-            .ix-ti{ color: $mc1; }
-        }
-        @media screen and (min-width:1025px) {
+        li{
+            background: #fff;
             &:hover{
-                .ix-ti{ color: $mc1; } 
+                background: $mc1;
             }
         }
-    }
-}
-.in-list{
-    a{ display: block; line-height: 42px; color: $fc1; font-size: 15px; overflow: hidden; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                color: $mc1;
-            }
+        .slick-active{
+            background: $mc1;
         }
     }
-    .date{ float: right; margin-left: 20px; color: $fc3; font-size: 13px; }
-    .nowti{ line-height: 42px; 
-        &:before{ content: ""; display: inline-block; vertical-align: middle; margin-right: 15px; width: 4px; height: 4px; background: $fc3; }
-    }
-    li{ display: none; }
-}
-.ix1{ padding: 55px 0 80px 0; }
-.pbg{ background: $hc3; }
-.ix-link-list{
-    li{ width: 33.33%; float: left; 
-        + li a{ border-bottom: 1px solid $hc2; }
-    }
-    a{ display: block; background: #fff; border-right: 1px solid $hc2; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                transform: translateY(-20px);
-            }
-        }
-    }
-    .pai{ padding-bottom: (230 / 420) * 100%; }
-    .txts{ height: 132px; padding: 20px 30px 0 30px; @include bs; }
-    .nowti{ margin-bottom: 24px - 11px; color: $mc1; font-size: 18px; }
-    .tx{ height: 24px * 2; }
-    .about{ height: 366px; padding: 40px 30px 0 30px; background: url(../images/bg.jpg) no-repeat; background-size: cover; @include bs; color: $mc3; 
-        .nowti{ color: #fff; } 
-        .tx{ height: 24px * 3; }
-    }
-}
-.ia-nums{
-    color: #fff; overflow: hidden;
-    p{ width: 50%; float: left; margin-top: 30px; line-height: 1; }
-    span{ display: block; margin-top: 5px; }
-    i{ margin-right: 10px; font-weight: bold; font-size: 46px; }
-}
-.ix3{ padding: 80px 0; }
-.ix-community{
-    a{ display: block; position: relative; padding-top: 55px; height: 188px; background: url(../img/ix_bg1.jpg) no-repeat center; @include bs; color: #fff; text-align: center;
-        &:before{ @include ba; top: 25px; bottom: 25px; right: 25px; left: 25px; border: 1px solid #fff; border-color: rgba(255,255,255,.4); @include mt3; }
-        @media screen and (min-width:1025px) {
-            &:hover{
-                &:before{ border-color: rgba(255,255,255,.8); }
-                .icon{ transform: translateX(10px); }
-            }
-        }
-    }
-    .nowti{ margin-bottom: 17px - 5px; font-weight: bold; font-size: 26px; }
-    .icon{ @include di; @include c(26px); border: 2px solid #fff; font-size: 14px; line-height: 26px; @include mt3; }
-}
-.ix4{ padding: 60px 0; }
-.ip-imgs{
-    .item > a{ display: block; position: relative; color: #fff; }
-    .pai{ padding-bottom: (550 / 1920) * 100%;  }
-    .slick-dots{ display: none !important; }
-    .nowti{ @include plr; bottom: 0; padding: 0 35% 0 5%; line-height: 50px; font-size: 16px; @include b5; display: none; }
-}
-.ix2{ position: relative; 
-    .ip-title{ position: absolute; top: 40px; left: 0; right: 0; z-index: 196; color: #fff; 
-        .b{ float: left; margin-right: (117 / 1280) * 100%; }
-        .logo{ float: left; margin-top: 10px;
-            .m{ display: none; }
-        }
-    }
-}
-.ip-nav{
-    position: absolute; z-index: 200; top: 0; bottom: 0; right: 50%; margin-right: -(1280px / 2); width: 430px; 
-    a{ color: #fff; 
-        &.act{
-            .tbc:before{ @include hvh; }
-            .icon{ transform: none; @include show; }
-        }
-    }
-    li{ height: 16.66%; @include bs; @include b5; background: rgba(0,0,0,.4); 
-        + li{ border-top: 1px solid #fff; border-color: rgba(255,255,255,.2); }
-    }
-    .tbc{ position: relative; z-index: 1; padding: 0 80px 0 40px; 
-        &:before{ z-index: -1; @include hv(#fff, 100%); background: url(../images/bg.png); }
-    }
-    .nowti{ line-height: 50px; font-size: 18px; }
-    .ico{ @include di; width: 50px; height: 50px; background-position: left center; }
-    .icon{ position: absolute; right: 35px; top: 50%; margin-top: -(26px / 2); @include c(26px); background: #fff; color: $mc1; text-align: center; font-size: 12px; line-height: 26px; transform: translateX(-100%); @include hide; @include mt4; }
-}
-.ip-title{
-    .ch{ font-size: 24px; font-weight: bold; }
-    .en{ margin-top: 20px; font-size: 18px; }
-    .b{ border-left: 1px solid #fff; padding-left: 15px; }
-}
-.pw2{
-    width: 1200px; margin: 0 auto;
-}
-.ab-title{
-    color: $fc3;
-    .ch{ font-size: 30px; font-weight: bold; color: $fc1; }
-    .en{ font-size: 24px; }
-    &.white{
-        color: #fff;
-        .ch{ color: #fff; }
-    }
-}
-.ab1{
-    padding: 80px 0 100px 0;
-    .ab-title{ margin-bottom: 40px; }
-    .ab-data{ margin-top: 60px; }
-}
-.ab-data{
-    li{ overflow: hidden; text-align: left; line-height: 1; 
-        + li{ margin-left: 80px; }
-    }
-    .icon{ float: left; padding-top: 10px; margin-right: 10px; font-size: 48px; }
-    p{ overflow: hidden;
-        span{ display: block; margin-top: 3px; }
-        i{ margin-right: 5px; font-size: 46px; font-weight: bold; color: $mc1; }
-    }
-}
-.ab2{ padding: 120px 0; background: $mc1 url(../images/bg1.jpg) no-repeat center; background-size: cover; color: #fff; 
-    .his-box{ margin-top: 90px; }
-}
-.his-a{
-    position: relative; margin: 0 18px; height: 410px; text-align: center; @include bs;
-    .pic{ border: 3px solid #fff; height: 160px; border-radius: 25px; }
-    .sj{ position: absolute; left: 50%; margin-left: -10px; border-left: 10px solid transparent; border-right: 10px solid transparent; color: #fff; }
-    .date{ font-size: 30px; line-height: 1; }
-    .text{ margin-top: 11px - 9px; font-size: 18px; }
-    .picbox{
-        overflow: visible;
-        &:before{ @include ba; left: 50%; margin-left: -8px; @include c(16px); background: #fff; }
-    }
-}
-.slick-arrow{ font-family: "iconfont" !important; text-align: center; }
-.slick-prev:before{ content: "\e660"; }
-.slick-next:before{ content: "\e65f"; }
-.his-list{ width: 1430px; margin: 0 auto; overflow: visible; 
-    .item1{
-        .picbox{ padding-bottom: 9px + 30px; 
-            &:before{ bottom: -8px; }
-        }
-        .sj{ border-top: 9px solid; bottom: 30px; }
-        .txts{ padding-top: 30px; }
-    }
-    .item2{
-        .his-a{ padding-top: 118px; }
-        .picbox{ padding-top: 9px + 30px; position: absolute; bottom: 0; left: 0; right: 0;
-            &:before{ top: -8px; }
-        }
-        .sj{ border-bottom: 9px solid; top: 30px; }
-        .txts{ padding-bottom: 30px; }
-    }
-    .slick-arrow{ margin-top: -(52px / 2); @include c(52px); background: #fff; color: $mc1; font-size: 16px; font-weight: bold; line-height: 52px; 
-        @media screen and (min-width:1025px) {
-            &:hover{ background: $mc2; }
-        }
-    }
-    .slick-prev{ left: -157px; }
-    .slick-next{ right: -157px; }
-}
-.his-box{
-    position: relative;
-    &:before{ @include ba; left: 0; right: 0; top: 50%; margin-top: -1px; height: 2px; background: #fff; }
-}
-.cul-list{
-    margin-left: -30px;
-    li{ width: 33.33%; float: left; margin-bottom: 30px; }
-    .ma{ position: relative; margin-left: 30px; color: #fff; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .txts{ padding-bottom: 40%; }
-                .pai:after{ @include show; }
-            }
-        }
-    }
-    .pai{ padding-bottom: (444 / 380) * 100%; 
-        &:before, &:after{ @include ba; z-index: 1; @include tblr; @include b5; }
-        &:before{ background: rgba(0,0,0,.3); }
-        &:after{ background: $mc1o; @include hide; @include mt4; }
-    }
-    .txts{ @include plr; z-index: 9; bottom: 0; padding: 0 5% 15% 5%; text-align: center; @include mt4; }
-    .icon{ line-height: 1; margin-bottom: 15px; display: block; font-size: 50px; }
-    .ti{ margin-bottom: 11px - 9px; font-size:26px; font-weight: bold; }
-    .text{ position: relative; padding-bottom: 15px - 8px; font-size: 18px; 
-        &:before{ @include ba; left: 50%; bottom: 0; margin-left: -10px; width: 20px; height: 1px; background: #fff; }
-    }
-}
-.ab3{
-    padding: 80px 0 70px 0;
-    .cul-list{ margin-top: 60px; }
-}
-.honor-arrow{
-    .slick-arrow{ @include c(52px); margin-top: -(52px / 2); border: 3px solid $hc1; background: none; color: $hc1; font-weight: bold; font-size: 18px; line-height: 52px - 6px; @include bs; 
-        @media screen and (min-width:1025px) {
-            &:hover{ border-color: $mc1; color: $mc1; }
-        }
-    }
-}
-.honor-list{
-    padding: 0 98px;
-    .item > a{ display: block; position: relative; margin: 0 12px; color: #fff; 
-        &:hover{
-            .pai:after{ @include show; }
-            .view-img-btn{ transform: none; @include show; }
-        }
-    }
-    .pai{ padding-bottom: (200 / 310) * 100%; 
-        &:after{ @include ba; @include tblr; @include b5; background: $mc1o2; @include hide; @include mt4; }
-    }
-    .view-img-btn{ @include plr; z-index: 9; top: 50%; margin-top: -(54px / 2); }
-}
-.view-img-btn{ display: block; text-align: center; font-size: 14px; line-height: 1; transform: translateY(-20px); @include hide; @include mt4;
-    &:before{ display: block; margin-bottom: 10px; font-size: 30px; }
-}
-.ab4{
-    padding: 80px 0 100px 0;
-    .honor-list{ margin-top: 60px; }
-    .ab-title{ margin-bottom: 40px; }
-}
-.imgShowBox{
-    position: fixed; z-index: 9999; @include tblr; @include b5; background: rgba(0,0,0,.8); @include hide; @include mt6;
-    .imgShowDemo .text, .top-bar, .arrow{ z-index: 99; @include b5; background: rgba(0,0,0,.3); text-align: center; color: #fff; }
-    .arrow, .close{ cursor: pointer; transition: background 300ms;
-        @media screen and (min-width:1025px) {
-            &:hover{ background: $mc1; }
-        }
-    }
-    .imgShowDemo .text, .top-bar{ @include plr; }
-    .top-bar{ top: 0; height: 44px; line-height: 44px; overflow: hidden; }
-    .close{ float: right; width: 44px; font-size: 18px; font-weight: bold; }
-    .counter{ float: left; margin-left: 10px; }
-    .arrow{ position: absolute; top: 50%; margin-top: -15px; width: 32px; height: 30px; line-height: 30px; font-size: 14px; }
-    .prev{ left: 6px; }
-    .next{ right: 6px; }
-    .imgShowDemo{
-        height: 100%;
-        .img{ position: absolute; @include tblr; width: auto; height: auto; max-width: 100%; max-height: 100%; vertical-align: middle; margin: auto; }
-        .text{ bottom: 0; padding: 10px 5%; }
-    }
-    &.show{ @include show; }
-}
-.ab5{
-    padding: 90px 0;
-    a{ color: #fff; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .icon{ transform: translateX(10px); }
-            }
-        }
-    }
-    .icon{ @include di; margin-top: 20px; @include c(30px); border: 2px solid #fff; line-height: 30px - 4px; @include bs; @include mt4; }
-}
-.periodical-list{
-    margin-left: -20px;
-    li{ width: 33.33%; float: left; margin-bottom: 20px; }
-    a{ display: block; position: relative; margin-left: 20px; color: #fff; }
-    .pai{ padding-bottom: (460 / 386) * 100%; }
-    .txts, .more{ @include plr; padding: 0 (50 / 386) * 100%; }
-    .txts{ top: 0; padding-top: (50 / 386) * 100%; }
-    .more{ bottom: 0; padding-bottom: (45 / 386) * 100%; }
-    .ch{ font-size: 18px; font-weight: bold; }
-    .en{ margin-top: 1px; font-size: 16px; }
-    .phase{ margin-top: 21px - 6px; }
-}
-.ab-more{ width: 120px; height: 40px; border: 2px solid #fff; text-align: center; line-height: 40px - 4px; @include bs; }
-.ab-more-h{
-    @media screen and (min-width:1025px) {
-        &:hover{
-            .ab-more{ background: #fff; color: $mc1; }
-        }
-    }
-}
-.pager{
-    a{ width: 60px; height: 60px; margin: 0 10px; background: #fff; border: 2px solid $hc2; @include bs; line-height: 60px - 4px; 
-        &.act{ background: $mc1; border-color: $mc1; color: #fff;  }
-        @media screen and (min-width:1025px) {
-            &:hover{ background: $mc1; border-color: $mc1; color: #fff; }
-        }
-    }
-    .arrow{ width: 120px; margin: 0 30px; }
-}
-.ab6{
-    padding: 70px 0 90px 0;
-    .periodical-list{ margin-bottom: 40px; }
-}
-.sos-box{
-    position: fixed; left: 10%; right: 10%; top: 50%; margin-top: -312px; text-align: center;
-    img{ vertical-align: bottom; max-width: 100%; }
-    .tx1{ margin-top: 70px; font-size: 30px; line-height: 1.4; font-weight: bold; color: $fc1; }
-    .tx2{ margin-bottom: 30px - 7px; }
-    a{ width: 160px; height: 50px; background: $mc1; color: #fff; line-height: 50px; 
-        @media screen and (min-width:1025px) {
-            &:hover{ background: $fc2; }
-        }
-    }
-}
-.news-list{
-    margin-left: -20px;
-    li{ width: 33.33%; float: left; margin-bottom: 20px; }
-    a{ display: block; position: relative; background: #fff; margin-left: 20px; 
-        &:before{ @include hl($mc1, 10px); }
-        @media screen and (min-width:1025px) {
-            &:hover{
-                &:before{ @include hlw; }
-                .news-date{ background: $mc1; }
-                .nowti{ color: $mc1; }
-            }
-        }
-    }
-    .pai{ padding-bottom: (230 / 387) * 100%; }
-    .news-date{ position: absolute; top: 0; left: 20px; }
-    .txts{ height: 180px; padding: 25px 20px 0 20px; @include bs; overflow: hidden; }
-    .nowti{ font-size: 18px; color: $fc1; @include mt3; }
-    .tx{ margin-top: 7px; height: 24px * 2; }
-    .more{ display: block; margin-top: 30px; font-size: 12px; line-height: 20px; overflow: hidden; }
-    .icon{ float: right; font-size: 24px; }
-}
-.news-date{
-    width: 58px; height: 58px; padding-top: 11px - 3px; background: $hc1; color: #fff; line-height: 1; text-align: center; font-size: 12px; @include bs; @include mt3;
-    span{ display: block; }
-    .d{ font-size: 28px; }
-}
-.ab6 .news-list{ margin-bottom: 40px; }
-.notice-list{
-    margin-left: -30px;
-    li{ width: 50%; float: left; margin-bottom: 30px; }
-    a{ display: block; height: 175px; padding: 30px 35px 0 35px; background: #fff; margin-left: 30px; @include bs; overflow: hidden; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                background: $mc1; color: #fff;
-                .ti{ color: #fff; }
-                .more{ padding-right: 30px; }
-                .icon{ @include show; transform: none; }
-            }
-        }
-    }
-    .pic{ width: 150px; float: left; margin-right: 35px; }
-    .txts{ overflow: hidden; }
-    .ti{ font-size: 18px; color: $fc1; height: 50px; margin-bottom: 44px - 12px; overflow: hidden; @include mt3; }
-    .clearfix{ line-height: 20px; }
-    .date{ float: left; font-style: italic; }
-    .more{ float: right; position: relative; padding-right: 0; transition: padding 300ms; }
-    .icon{ display: block; position: absolute; top: 0; right: 0; font-size: 22px; transform: translateX(-10px); @include hide; transition: transform 300ms, opacity 300ms, visibility 300ms; }
-}
-.ab6 .notice-list{ margin-bottom: 30px; }
-.nd-pw{ margin: 0 auto; width: 1000px; }
-.nd-t{
-    border-bottom: 10px solid $mc1; position: relative; padding: 130px 0 80px 0;
-    .sj{ position: absolute; top: 100%; left: 50%; margin: 10px 0 0 -10px; color: $mc1; border-left-width: 10px; border-right-width: 10px; border-top-width: 12px; }
-    .ti{ margin-bottom: 15px; font-weight: bold; color: $fc1; font-size: 30px; }
-    .fib{ line-height: 24px; color: $fc3; }
-    .ib + .ib{ margin-left: 35px; }
-}
-.share{
-    p{ float: left; margin-right: 2px; }
-    a{ background: none !important; line-height: 24px !important; height: auto !important; font-size: 22px !important; color: $fc3 !important; opacity: 1 !important;
-        + a{ margin-left: 12px !important; }
-        @media screen and (min-width:1025px) {
-            &:hover{ color: $mc1 !important; }
-        }
-    }
-}
-.nd-b{ padding: 80px 0 100px 0; 
-    .nd-back{ margin-top: 60px; }
-}
-.nd-back{
-    height: 60px;
-    .icon{ position: fixed; z-index: 299; top: 50%; margin-top: -(52px / 2); @include c(52px); line-height: 52px; font-size: 18px; font-weight: bold; }
-    a{ display: block; background: $hc1; text-align: center; color: #fff; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                background: $mc1; color: #fff;
-            }
-        }
-    }
-    .back{ width: 160px; margin: 0 auto; line-height: 60px; }
-    .icon-xiangzuojiantou{ left: (88 / 1920) * 100%; }
-    .icon-xiangyoujiantou{ right: (88 / 1920) * 100%; }
-}
-.pd-t{
-    padding: 0 0 100px 0 !important;
-    .t{ background: $mc1; padding: 130px 0 80px 0; color: #fff; 
-        .fib, .ti{ color: #fff; }
-        .share a{ color: #fff !important; 
-            @media screen and (min-width:1025px) {
-                &:hover{ opacity: .7 !important; }
-            } 
-        }
-    }
-    .pd-imgs{ margin-top: 100px; }
-}
-.pd-imgs{
-    overflow: visible;
-    .pai{ padding-bottom: (600 / 1000) * 100%; }
-    .slick-prev{ left: -140px; }
-    .slick-next{ right: -140px; }
-    .slick-dots{ display: none !important; }
-}
-.pd-arrow{
-    .slick-arrow{ top: 50%; margin-top: -(52px / 2); @include c(52px); background: $hc1; line-height: 52px; font-weight: bold; font-size: 18px; color: #fff; 
-        @media screen and (min-width:1025px) {
-            &:hover{ background: $mc1; }
-        }
-    }
-}
-.pd-back{
-    height: auto; padding: 30px 0;
-    a{ background: #fff; line-height: 60px; color: $fc3; }
-    .back{ float: right; }
-    .arrow{ float: left; width: 120px; margin-right: 15px; }
-}
-.nd-b{
-    .ti{ font-weight: bold; color: $fc1; font-size: 30px; }
-    .func-table{ margin-top: 30px; }
-}
-.func-table{
-    table{ width: 100%; }
-    th, td{ border: 1px solid $hc1; padding: 25px; }
-    th{ width: 12%; background: $hc3; font-weight: normal; text-align: center; }
-    td{ width: 38%; }
-}
-.pro-list{
-    margin-left: -20px;
-    li{ width: 33.33%; float: left; margin-bottom: 20px; }
-    a{ display: block; position: relative; margin-left: 20px; color: #fff; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .pai{
-                    &:before{ @include hide; }
-                    &:after{ @include show; }
-                }
-                .view-img-btn{ transform: none; @include show; }
-            }
-        }
-    }
-    .pai{ padding-bottom: (306 / 386) * 100%; 
-        &:before, &:after{ @include ba; z-index: 9; @include tblr; @include b5; @include mt4; }
-        &:before{ background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(0,0,0,0.72) 100%); }
-        &:after{ background: $mc1o2; @include hide;  }
-    }
-    .view-img-btn{ @include plr; z-index: 10; top: 50%; margin-top: -(54px / 2); }
-    .nowti{ @include plr; z-index: 20; bottom: 17px - 5px; padding: 0 5%; text-align: center; font-size: 18px; }
-}
-.ab6 .pro-list{ margin-bottom: 40px; }
-.case-nav{
-    background: $hc2; 
-    ul{ text-align: left; }
-    li{ width: 20%; }
-    a{ display: block; line-height: 40px; white-space: nowrap; text-align: center; overflow: hidden;
-        &:before{ content: ""; @include di; margin: 0 8px (40px - 12px) / 2 0; @include c(12px); border: 3px solid #fff; @include bs; @include mt3; }
-        &.act:before{ border-color: $mc1; }
-        @media screen and (min-width:1025px) {
-            &:hover{
-                &:before{ border-color: $mc1; }
-            }
-        }
-    }
-}
-.case-list{
-    margin-left: -20px; 
-    li{ width: 33.33%; float: left; margin-bottom: 20px; }
-    a{ display: block; background: #fff; margin-left: 20px; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .icon{ background: $mc1; }
-            }
-        }
-    }
-    .pai{ padding-bottom: (230 / 387) * 100%; }
-    .txts{ height: 80px; padding: 0 20px; overflow: hidden; }
-    .nowti{ line-height: 80px; font-size: 18px; }
-    .icon{ float: right; margin: (80px - 30px) / 2 0 0 10px; @include c(30px); background: $hc1; font-size: 12px; font-weight: bold; line-height: 30px; text-align: center; color: #fff; @include mt3; }
-}
-.ab6{
-    .case-nav{ margin-bottom: 30px; }
-    .case-list{ margin-bottom: 40px; }
-}
-.down-list{
-    li + li{ margin-top: 15px; }
-    a{ display: block; height: 80px; background: #fff; overflow: hidden; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .date, .icon-xiazai{ background: $mc1; }
-                .nowti{ color: $mc1; }
-            }
-        }
-    }
-    .date{ float: left; margin-right: 45px; width: 80px; height: 100%; padding-top: 20px; background: $hc1; font-size: 12px; text-align: center; line-height: 1; color: #fff; @include bs; @include mt3;
-        span{ display: block; }
-        .d{ font-size: 28px; }
-    }
-    .icon-xiazai{ float: right; margin-left: 20px; width: 80px; height: 100%; background: $hc1; line-height: 80px; text-align: center; font-size: 34px; color: #fff; @include mt3; }
-    .nowti{ line-height: 80px; font-size: 18px; @include mt3; 
-        .icon{ @include di; margin-right: 10px; color: $fc3; font-size: 22px; }
-    }
-}
-.ab6 .down-list{ margin-bottom: 60px; }
-.elegant-list{
-    margin-left: -35px;
-    li{ width: 33.33%; float: left; margin-bottom: 35px; }
-    a{ display: block; margin-left: 35px; color: #fff;
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .pai:after{ @include show; }
-                .view-img-btn{ transform: none; @include show; }
-            }
-        }
-    }
-    .pai{ padding-bottom: (251 / 378) * 100%; 
-        &:after{ @include ba; @include tblr; @include b5; background: $mc1o2; @include hide; @include mt4; }
-    }
-    .view-img-btn{ @include plr; z-index: 9; top: 50%; margin-top: -(54px / 2); }
-}
-.ab6 .elegant-list{ margin-bottom: 30px; }
-.jb1{
-    background: #fff; padding: 100px 0 90px 0;
-}
-.jb-ti{ position: relative; padding-bottom: 30px; line-height: 1.4; font-size: 30px; 
-    strong{ color: $fc1; }
-    &:before{ @include ba; bottom: 0; left: 50%; margin-left: -(56px / 2); width: 56px; height: 3px; background: $hc1; }
-}
-.job-list{
-    li{
-        + li{ margin-top: 10px; }
-        &:first-child{
-            .t{ color: #fff; font-size: 18px; cursor: default; 
-                > div{ background: $mc1; }
-            }
-        }
-        &.act{
-            .t{ 
-                .add, > div{ background: $mc2; }
-                .add:after{ transform: rotate(90deg); }
-                > div{ color: #fff; }
-            }
-        }
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .t{  
-                    .add, > div{ background: $mc2; }
-                    > div{ color: #fff; }
-                } 
-            }
-        }
-    }
-    .t{ overflow: hidden; background: #fff; cursor: pointer;
-        > div{ float: left; position: relative; height: 60px; padding: 0 5px; @include bs; text-align: center; @include mt3;
-            + div{ border-left: 1px solid $hc3; }
-        }
-        .nowti{ line-height: 60px; }
-    }
-    .j1{ width: 38.9%; }
-    .j5, .j4, .j2{ width: 10.8%; }
-    .j3{ width: 21.4%; }
-    .j6{ width: 7.3%; padding: 0 !important; }
-    .b{ padding: 45px 70px 35px 70px; background: #fff; display: none; }
-    .add{ display: block; position: relative; height: 100%; background: $hc1; @include mt3;
-        &:before, &:after{ @include ba; top: 50%; left: 50%; background: #fff; border-radius: 2px; @include mt4; }
-        &:before{ width: 20px; height: 2px; margin: -1px 0 0 -10px; }
-        &:after{ width: 2px; height: 20px; margin: -10px 0 0 -1px; }
-    }
-    .set-email{ color: #fff; }
-}
-.set-email{ display: block; width: 120px; background: $hc1; text-align: center; color: #fff; line-height: 40px; @include mt3;
-    @media screen and (min-width:1025px) {
-        &:hover{ background: $mc1; }
-    }
-}
-.jb2{ padding: 80px 0 100px 0; 
-    .ab-title{ margin-bottom: 40px; }
-    .job-list{ margin-bottom: 60px; }
-}
-.load-more{ @include di; }
-.branch-list{
-    li + li{ margin-top: 15px; }
-    a{ display: block; background: #fff; overflow: hidden; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                .nowti{ color: $mc1; }
-                .set-email{ background: $mc1; }
-            }
-        }
-    }
-    .picbox{ width: 50%; float: right; }
-    .pai{ padding-bottom: (259 / 600) * 100%; }
-    .txts{ overflow: hidden; padding: 45px 60px 0 60px; }
-    .nowti{ margin-bottom: 10px; font-size: 20px; color: $fc1; @include mt3; }
-    .tx{ margin-bottom: 30px; height: 24px * 2; }
-}
-.ab6 .branch-list{ margin-bottom: 60px; }
-.bra-t{ @include bg; padding-bottom: 110px; 
-    .ti{ margin-bottom: 0; color: #fff; }
-}
-.bra-back{
-    a{ @include bs; border: 2px solid $hc1; 
-        @media screen and (min-width:1025px) {
-            &:hover{
-                border-color: $mc1;
-            }
-        }
-    }
-}
-.bra-link{
-    padding: 40px 0;
-    .ti{ float: left; margin-right: 35px; font-weight: bold; color: $fc1; font-size: 20px; }
-    .lk{ display: block; padding-top: 2px; overflow: hidden; 
-        @media screen and (min-width:1025px) {
-            &:hover{ color: $mc1; text-decoration: underline; }
-        }
-    }
-}
-#map{ height: 700px; border-bottom: 10px solid $mc1; }
-.contact-list{
-    margin-left: -40px; line-height: 24px; font-size: 16px;
-    li{ width: 50%; float: left; margin-bottom: 40px; }
-    .ma{ display: block; padding: 25px 50px; background: #fff; margin-left: 40px; overflow: hidden; }
-    .nowti{ float: left; width: 140px; line-height: 24px; font-size: 20px; font-weight: bold; }
-    .icon{ @include di; width: 30px; font-size: 20px; color: $hc1; @include mt3; }
-    a{
-        @media screen and (min-width:1025px) {
-            &:not(.na):hover{
-                color: $mc1;
-                .icon{ color: $mc1; }
-            }
-        }
-    }
-    .item1{ clear: both; }
-    .text{ overflow: hidden; }
-}
-.cta1{
-    padding: 80px 0 60px 0;
-    .ab-title{ margin-bottom: 40px; }
-}
-.marketing-map-box{
-    width: 962px; margin: 0 auto;
-}
-.marketing-map{
-    position: relative; color: #fff;
-    img{ display: block; width: 100%; }
-    .dot{ position: absolute; z-index: 9; line-height: 1; cursor: pointer;
-        > .icon{ @include plr; bottom: 100%; padding-bottom: 2px; text-align: center; font-size: 28px; }
-        &.act{ color: $mc4; z-index: 20;
-            .map-info{ transform: none; @include show; }
-        }
-    }
-    .jl{ top: 194px; right: 89px; }
-    .ln{ top: 256px; right: 121px; }
-    .tj{ top: 313px; right: 208px; }
-    .bj{ top: 292px; right: 232px; }
-    .nmg{ top: 284px; right: 319px; }
-    .hb{ top: 346px; right: 247px; }
-    .sd{ top: 383px; right: 198px; }
-    .sx{ top: 377px; right: 305px; }
-    .nx{ top: 376px; right: 402px; }
-    .gs{ top: 395px; right: 445px; }
-    .sxi{ top: 455px; right: 370px; }
-    .xj{ top: 258px; right: 722px; }
-    .sc{ top: 505px; right: 463px; color: $mc4; }
-    .yn{ top: 645px; right: 494px; }
-    .gx{ top: 670px; right: 342px; }
-    .hn{ top: 767px; right: 323px; }
-    .gd{ top: 670px; right: 253px; }
-    .fj{ top: 616px; right: 168px; }
-    .hna{ top: 582px; right: 289px; }
-    .jx{ top: 578px; right: 216px; }
-    .zj{ top: 536px; right: 140px; }
-    .sh{ top: 483px; right: 113px; }
-    .js{ top: 448px; right: 155px; }
-    .ah{ top: 468px; right: 201px; }
-    .hbe{ top: 512px; right: 261px; }
-    .hena{ top: 436px; right: 265px; }
-    .gzh{ top: 595px; right: 385px; }
-    .map-info{ position: absolute; z-index: 99; bottom: 100%; left: 50%; margin-left: -(264px / 2); transform: translateY(-20px); @include hide; @include mt3; cursor: default; }
-}
-.ser1{ padding: 55px 0 50px 0; }
-.map-info{
-    width: 264px; padding-bottom: 12px; color: $fc2;
-    &.hide{ display: none; }
-    .b{ position: relative; padding: 20px 35px; border-radius:20px; background: #fff; }
-    p{ line-height: 24px; 
-        + p{ margin-top: 4px; }
-    }
-    .icon, strong{ @include di; }
-    .icon{ width: 25px; color: $hc1; }
-    strong{ width: 65px; font-size: 16px; }
-    .sj{ position: absolute; top: 100%; left: 50%; margin-left: -8px; border-left-width: 8px; border-right-width: 8px; border-top-width: 9px; color: #fff; }
 }

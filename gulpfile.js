@@ -179,5 +179,5 @@ gulp.task('auto',function(){
   	});
   	gulp.watch(['*.html', 'css/*.css', 'js/*.js'], {cwd: 'dist'}, reload);
 });
-gulp.task('start',['clean','sprite','imagemin','uglify','sass','concat','copyone','copy','fileinclude']);
+gulp.task('start',['sprite','imagemin','uglify','sass','concat','copyone','copy','fileinclude']);
 gulp.task('default',['auto']);
