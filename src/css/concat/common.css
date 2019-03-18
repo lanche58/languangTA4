@@ -1,6 +1,16 @@
 a {
 	color: #666;
 }
+@font-face {
+	font-family: 'Conv_PFDINTEXTCOMPPRO-REGULAR';
+	src: url('../css/PFDINTEXTCOMPPRO-REGULAR.eot');
+	src: local('☺'), url('../css/PFDINTEXTCOMPPRO-REGULAR.woff') format('woff'), url('../css/PFDINTEXTCOMPPRO-REGULAR.ttf') format('truetype'), url('../css/PFDINTEXTCOMPPRO-REGULAR.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.ff-1{
+	font-family: 'Conv_PFDINTEXTCOMPPRO-REGULAR';
+}
 .freeTx a{
 	color: #000;
 }

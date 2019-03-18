@@ -22,7 +22,7 @@
                 &:before{
                     @include hl($mc1, 6px);
                 }
-                &:hover, &.act{
+                &:hover, &.act, &.act2{
                     &:before{
                         @include hlw;
                     }
@@ -127,14 +127,923 @@
 
 .banner{
     .slick-dots{
+        left: 50%;
+        margin-left: -600px + 75px + 30px;
+        bottom: ((24px - 6px) / 2) + 16px + 25px;
+        text-align: left;
         li{
             background: #fff;
+            width: 6px;
+            height: 6px;
+            margin: 0 28px 0 0;
             &:hover{
                 background: $mc1;
             }
         }
         .slick-active{
             background: $mc1;
+        }
+    }
+}
+
+.banner-box{
+    position: relative;
+}
+
+.banner-counter{
+    @include plr; 
+    bottom: 25px; 
+    z-index: 199;
+    font-size:16px; 
+    color: #fff;
+    line-height: 24px;
+    .pw{
+        position: relative;
+        padding-left: 11px;
+        @include bs;
+        padding-bottom: 16px;
+        > span{
+            @include di;
+        }
+    }
+    .sj{
+        position: absolute;
+        left: 0;
+        top: (24px - 6px) / 2;
+        border-top-width: 3px;
+        border-bottom-width: 3px;
+        border-left-width: 4px;
+    }
+    .anum{
+        border-right: 1px solid #fff;
+        padding-right: 15px;
+    }
+    .line{
+        @include plr;
+        height: 1px;
+        bottom: 0;
+        background: #fff;
+    }
+}
+
+#time-axis{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: $mc1;
+}
+
+.ix-news{
+    float: left;
+    width: 57.16%;
+    padding-right: 35px;
+    @include bs;
+    padding-top: 60px - 47px;
+}
+
+.in-nav{
+    line-height: 24px;
+    border-bottom: 5px solid #EFEEEE;
+    ul{
+        float: left;
+        li{
+            position: relative;
+            float: left;
+            + li{
+                padding-left: 19px;
+                margin-left: 18px;
+                &:before{
+                    @include ba;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -(12px / 2);
+                    width: 1px;
+                    height: 12px;
+                    background: #EFEEEE;
+                }
+            }
+            &.act{
+                a:before{
+                    @include hlw;
+                }
+            }  
+        }
+        a{
+            position: relative;
+            display: block;
+            padding: 6px 0;
+            font-weight: bold;
+            &:before{
+                @include hl($mc1,5px);
+                bottom: -5px;
+            }
+            &:hover{
+                &:before{
+                    @include hlw;
+                }  
+            }
+        }
+    }
+    .more{
+        float: right;
+        color: #AAA;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 6px;
+        .aw{
+            @include di;
+            height: 24px;
+            width: 6px;
+            margin-left: 6px;
+            background: url('../img/组 116.png') no-repeat center;
+        }
+        &:hover{
+            color: $mc1;
+            .aw{
+                background: url('../img/组-1162.png') no-repeat center;
+            }
+        }
+    }
+}
+
+.in-list{
+    margin-top: 20px;
+    li{
+        display: none;
+    }
+    a{
+        display: block;
+        overflow: hidden;
+        line-height: 28px;
+        color: #AAAAAA;
+        &:hover{
+            color: $mc1;
+        }
+    }
+    .date{
+        float: right;
+        margin-left: 15px;
+        font-size:12px;
+    }
+    .nowti{
+        line-height: 28px;
+    }
+}
+
+.ix-ab{
+    float: right;
+    width: 42.84%;
+    a{
+        display: block;
+        height: 235px;
+        padding: 0 10px 0 35px;
+        background:radial-gradient(circle,rgba(247,251,255,1) 0%,rgba(192,222,248,1) 100%);
+        @include bs;
+        color: #888888;
+    }
+    .ab-data{
+        float: right;
+        margin-left: 10px;
+    }
+    .txts{
+        overflow: hidden;
+        padding-top: 25px;
+    }
+    .nowti{
+        color: #5A5A5A;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 40px - 10px;
+    }
+    .tx{
+        height: 24px * 3;
+        margin-bottom: 27px - 7px;
+    }
+}
+
+.ab-data{
+    position: relative;
+    width: 167px;
+    height: 237px;
+    @include bs;
+    padding: (10px + 45px) 15px 0 15px + 15px;
+    background: url('../img/联合 6.png') no-repeat;
+    font-size:12px;
+    color: #fff;
+    margin-top: -10px - 10px;
+    &:before{
+        @include ba;
+        top: 10px;
+        left: 15px - 4px;
+        width: 4px;
+        height: 10px;
+        background: url('../img/路径 18.png') no-repeat left bottom;
+    }
+    .name{
+        font-size: 13px;
+        color: #8F877F;
+    }
+    .num{
+        margin-top: 4px;
+        line-height: 1;
+        span{
+            position: relative;
+            font-size: 45px;
+            letter-spacing: -5px;
+            &:before{
+                @include ba;
+                top: 0;
+                left: 100%;
+                margin-left: 10px;
+                margin-top: 8px;
+                width: 12px;
+                height: 12px;
+                background: url('../img/蒙版组 11.png') no-repeat;
+            }
+        }
+    }
+    .time{
+        position: absolute;
+        left: 15px + 15px;
+        right: 15px;
+        bottom: 30px + 13px;
+    }
+}
+
+.ix-more{
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height:16px;
+    color: #AAAAAA;
+    @include mt3;
+    .aw{
+        @include di;
+        width: 6px;
+        height: 16px;
+        margin-left: 6px;
+        background: url('../img/组 116.png') no-repeat center;
+    }
+    &:hover{
+        color: $mc1;
+        .aw{
+            background: url('../img/组-1162.png') no-repeat center;
+        }
+    }
+}
+
+.ix2{
+    background: #F9F9F9;
+}
+
+.ix-honor{
+    float: right;
+    width: 42.84%;
+    @include bs;
+    padding: 20px 20px 0 35px;
+    background:radial-gradient(circle,rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%);
+    height:280px;
+    > .nowti{
+        color: #5A5A5A;
+        font-weight:bold;
+        font-size: 18px;
+        margin-bottom: 38px - 10px;
+    }
+    .b{
+        margin-bottom: 37px - 9px;
+        a{
+            display: block;
+            overflow: hidden;
+            color: #888;
+            line-height:26px;
+            &:hover{
+                color: $mc1;
+            }
+        }
+        .nowti{
+            line-height:26px;
+            font-size:13px;
+        }
+        .hot{
+            float: right;
+            color: $mc1;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+    }
+}
+
+.ix1{
+    padding-top: 35px;
+}
+
+.ix-link{
+    float: left;
+    width: 57.16%;
+}
+
+.iga-list{
+    a{
+        display: block;
+        position: relative;
+        width: 50%;
+        float: left;
+    }
+    .pai{
+        padding-bottom: (143 / 334) * 100%;
+    }
+    .nowti{
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 20px;
+        color: #5A5A5A;
+        font-size:18px;
+        font-weight: bold;
+    }
+}
+
+.ico-list{
+    margin-top: 30px;
+    a{
+        display: block;
+        float: left;
+        position: relative;
+        z-index: 1;
+        @include c(70px);
+        background: #fff;
+        text-align: center;
+        font-size: 12px;
+        color: #AAAAAA;
+        @include bs;
+        padding-top: 6px;
+        + a{
+            margin-left: 40px;
+        }
+        &:before{
+            @include ba;
+            z-index: -1;
+            @include tblr;
+            border-radius: 50%;
+            background:linear-gradient(146deg,rgba(255,251,216,1) 0%,rgba(241,172,111,1) 100%);
+            transform: rotateY(90deg);
+            @include hide;
+            @include mt4;
+        }
+        &:hover{
+            color: #fff;
+            &:before{
+                transform: none;
+                @include show;
+            }
+        }
+    }
+    .ico{
+        display: block;
+        height: 30px;
+        background-position: center;
+        margin-bottom: 5px;
+    }
+    .i1{
+        .ico{
+            background-image: url('../img/图层-2.png');
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/图层-22.png');
+            } 
+        }
+    }
+    .i2{
+        .ico{
+            background-image: url('../img/图层-3.png');
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/图层-33.png');
+            } 
+        }
+    }
+    .i3{
+        .ico{
+            background-image: url('../img/图层-4.png');
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/图层-44.png');
+            } 
+        }
+    }
+    .i4{
+        .ico{
+            background-image: url('../img/图层-55.png');
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/图层-5.png');
+            } 
+        }
+    }
+    .i5{
+        .ico{
+            background-image: url('../img/图层-6.png');
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/图层-66.png');
+            } 
+        }
+    }
+    .i6{
+        .ico{
+            background-image: url('../img/图层-1.png');
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/图层-11.png');
+            } 
+        }
+    }
+}
+
+.footer{
+    padding: 25px 0 45px 0;
+    line-height: 24px;
+    color: #888;
+    a{
+        color: #888;
+        &:hover{
+            color: $mc1;
+        }
+    }
+    .f-cta{
+        margin-bottom: 1px;
+    }
+    .f-weixin{
+        margin-top: 10px;
+    }
+}
+
+.f-cta{
+    overflow: hidden;
+    font-size: 12px;
+    a{ 
+        float: left; 
+        + a{
+            margin-left: 20px;
+        }
+    }
+    .ico{
+        float: left;
+        width: 24px;
+        height: 24px;
+        background-position: left center;
+    }
+    .tel{
+        .ico{ 
+            background-image: url('../img/tel.png'); 
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/tel2.png');
+            }
+        }
+    }
+    .email{
+        .ico{ 
+            background-image: url('../img/emai.png'); 
+        }
+        &:hover{
+            .ico{
+                background-image: url('../img/emai2.png'); 
+            }
+        }
+    }
+}
+
+.f-weixin{
+    padding-right: 30px;
+    background: url('../img/weixin.png') no-repeat right center;
+    &:hover{
+        background-image: url('../img/weixin2.png'); 
+    }
+}
+
+.roll-news{
+    @include plr;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+    padding: (68px - 40px) / 2 0;
+}
+
+.rn-list{
+    height: 40px;
+    .item > a{
+        color: #fff;
+        &:hover{
+            color: $mc1;
+        }
+    }
+    .nowti{
+        display: block;
+        line-height: 40px;
+        font-size: 24px;
+    }
+    .slick-dots{
+        left: auto;
+        bottom: (40px - 6px) / 2;
+        li{
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            margin: 0 0 0 22px;
+            &:hover{
+                background: $mc1; 
+            }
+        }
+        .slick-active{
+            background: $mc1;
+        }
+    }
+}
+
+.date-select-wrap{
+    text-align: right;
+    margin-bottom: 13px;
+}
+.date-select{
+    @include di;
+    overflow: hidden;
+    height: 24px;
+    line-height: 24px;
+    .aw{
+        float: left;
+        height: 100%;
+        width: 9px;
+        background: url('../img/al.png') no-repeat center;
+        @include mt4;
+    }
+    .date-list{
+        overflow: hidden;
+        float: left;
+        width: 0;
+        @include mt4;
+        a{
+            float: left;
+            width: 32px;
+            margin-right: 20px;
+            opacity: .3;
+            &:hover{
+                color: $mc1;
+                opacity: 1;
+            }
+        }
+    }
+    .all{
+        float: left;
+        font-weight: bold;
+        margin-left: 10px;
+        @include mt4;
+    }
+    &.act{
+        .aw{
+            background-image: url('../img/组 116.png');
+            margin-right: 20px;
+        }
+        .date-list{
+            width: 208px;
+        }
+        .all{
+            margin-left: 0;
+        }
+    }
+    &:hover{
+        .all{
+            color: $mc1;
+        }
+        .aw{
+            background-image: url('../img/al2.png');
+        }
+        &.act .aw{
+            background-image: url('../img/组-1162.png');
+        }
+    }
+}
+
+.nw1{
+    background: #F9F9F9;
+    padding-top: 55px;
+    .ti{
+        float: left;
+        line-height: 38px;
+        font-size: 24px;
+    }
+    .search-box{
+        float: right;
+    }
+    .date-select-wrap{
+        margin-top: 30px - 7px;
+    }
+    .cont{
+        border-top: 1px solid #CBCBCB;
+    }
+}
+
+.search-box{
+    width: 272px;
+    position: relative;
+    input{
+        display: block;
+        width: 100%;
+        height: 38px;
+        @include bs;
+        border:1px solid #ccc;
+        border-radius: 20px;
+        padding-left: 47px;
+        font-size: 12px;
+        @include mt3;
+        background: #fff;
+        &:focus{
+            border-color: $mc1;
+        }
+    }
+    .ico{
+        position: absolute;
+        left: 22px;
+        top: 0;
+        bottom: 0;
+        width: 18px;
+        background: url('../img/放大镜.png') no-repeat center;
+    }
+}
+
+.nwL{
+    width: 69%;
+    float: left;
+    @include bs;
+    border-right: 1px solid #CBCBCB;
+    padding-right: 43px;
+    padding-top: 40px - 15px;
+    padding-bottom: 150px;
+    .pager{
+        margin-top: 65px;
+    }
+}
+
+.nwR{
+    float: right;
+    width: 31%;
+    @include bs;
+    padding-left: 28px;
+    padding-top: 40px;
+}
+
+.news-list{
+    a{
+        display: block;
+        overflow: hidden;
+        font-size: 12px;
+        padding: 15px 0;
+        border-bottom: 1px solid #E7E9E8;
+        &:hover{
+            .nowti{
+                color: $mc1;
+            }
+        }
+    }
+    .pic{
+        float: left;
+        width: 190px;
+        height: 129px;
+        margin-right: 13px;
+    }
+    .txts{
+        overflow: hidden;
+        padding-top: 10px;
+    }
+    .nowti{
+        font-size:15px;
+        color: #383737;
+        margin-bottom: 18px - 6px;
+        @include mt3;
+    }
+    .tx{
+        line-height: 16px !important;
+        height: 16px * 2;
+        margin-bottom: 30px;
+    }
+    .date{
+        color: #B4BBC2;
+    }
+}
+
+.pager{
+    a{
+        width:44px;
+        height:44px;
+        background: #CBCBCB;
+        color: #fff;
+        line-height: 44px;
+        font-size:12px;
+        margin: 0 8px;
+        &:hover, &.act{
+            background: $mc1;
+        }
+    }
+}
+
+.books-a{
+    display: block;
+    position: relative;
+    color: #72A7C7;
+    .pai{
+        padding-bottom: (396 / 344) * 100%;
+    }
+    .txts{
+        @include plr;
+        top: 0;
+        padding: 51px - 3px 30px 0 30px;
+    }
+    .en{
+        font-size: 24px;
+        color: #79B0D1;
+    }
+    .ch{
+        font-size:24px;
+        color: #6B9EB9;
+        margin-bottom: 60px - 5px;
+    }
+    .pic2{
+        width: 88px;
+        border: 2px solid #A4E2DF;
+        max-width: 100%;
+        @include bs;
+        margin-bottom: 2px;
+    }
+}
+
+.news-video{
+    margin-top: 10px;
+    display: block;
+    color: #fff;
+    position: relative;
+    .pai{
+        padding-bottom: (170 / 344) * 100%;
+        &:after{
+            @include ba;
+            @include tblr;
+            @include b5;
+        }
+    }
+    .btn{
+        @include plr;
+        top: 50%;
+        margin-top: -(56px / 2);
+        text-align: center;
+        line-height: 1;
+        .ico{
+            display: block;
+            height: 35px;
+            background: url('../img/video.png') no-repeat center;
+            margin-bottom: 7px;
+        }
+    }
+}
+
+.nwig-list{
+    margin-top: 10px;
+    .item{
+        > a{
+            display: block;
+            position: relative;
+            color: #fff;
+        }
+    }
+    .pai{
+        padding-bottom: (170 / 344) * 100%;
+    }
+    .nowti{
+        @include plr;
+        bottom: 0;
+        line-height: 42px;
+        @include b5;
+        padding-left: 25px;
+    }
+    .slick-dots{
+        left: auto;
+        right: 15px;
+        bottom: (42px - 6px) / 2;
+        li{
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            margin: 0 0 0 12px;
+            &:hover{
+                background: $mc1;
+            }
+        }
+        .slick-active{
+            background: $mc1;
+        }
+    }
+}
+
+.ndR{
+    float: right;
+    width: 65%;
+    padding: 45px 0 100px 0;
+}
+
+.nw2{
+    position: relative;
+    background: #F9F9F9;
+    .ti{
+        font-size: 30px;
+        font-weight: bold;
+        color: #383737;
+    }
+    .ndR .date{
+        color: #B4BBC2;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+    .share{
+        margin-top: 15px - 7px;
+        img{
+            max-width: 100%;
+            vertical-align: bottom;
+        }
+    }
+    .freeTx{
+        margin-top: 50px;
+    }
+}
+
+.ndL{
+    float: left;
+    width: 35%;
+    @include bs;
+    padding: 200px 90px 0 0;
+}
+
+.hot-news{
+    .ti{
+        font-size: 18px;
+        color: #383737;
+        font-weight: normal;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+        margin-bottom: 34px - 6px;
+    }
+    a{
+        display: block;
+        position: relative;
+        line-height: 22px;
+        padding-left: 10px;
+        &:before{
+            @include ba;
+            @include c(4px);
+            background: $fc2;
+            left: 0;
+            top: (22px - 4px) / 2;
+            @include mt3;
+        }
+        + a{
+            margin-top: 23px;
+        }
+        &:hover{
+            color: $mc1;
+            &:before{
+                background: $mc1;
+            }
+        }
+    }
+    .name{
+        line-height: 22px;
+    }
+}
+
+.back{
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+    color: #383737;
+    .aw{
+        @include di;
+        height: 100%;
+        width: 6px;
+        background: url('../img/组 116.png') no-repeat center;
+        margin-right: 6px;
+    }
+    &:hover{
+        color: $mc1;
+        .aw{
+            background-image: url('../img/组-1162.png');
         }
     }
 }

@@ -69,14 +69,14 @@ $(window).resize(function () {
 $(function () {
 
     $('.nav .news').mouseenter(function() {
-        $(this).addClass('act');
+        $(this).addClass('act2');
         $('.pull-nav').stop().slideDown();
     });
 
     $('.header').mouseleave(function() {
-        var _act = $('.nav .news').hasClass('act');
+        var _act = $('.nav .news').hasClass('act2');
         if (_act) {
-            $('.nav .news').removeClass('act');
+            $('.nav .news').removeClass('act2');
             $('.pull-nav').stop().slideUp();
         }
     });
