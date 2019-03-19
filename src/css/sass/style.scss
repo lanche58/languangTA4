@@ -131,6 +131,7 @@
         margin-left: -600px + 75px + 30px;
         bottom: ((24px - 6px) / 2) + 16px + 25px;
         text-align: left;
+        z-index: 200; 
         li{
             background: #fff;
             width: 6px;
@@ -572,6 +573,7 @@
     padding: 25px 0 45px 0;
     line-height: 24px;
     color: #888;
+    font-size: 12px;
     a{
         color: #888;
         &:hover{
@@ -588,7 +590,6 @@
 
 .f-cta{
     overflow: hidden;
-    font-size: 12px;
     a{ 
         float: left; 
         + a{
@@ -952,7 +953,7 @@
 
 .ndR{
     float: right;
-    width: 65%;
+    width: 58.33%;
     padding: 45px 0 100px 0;
 }
 
@@ -982,10 +983,18 @@
 }
 
 .ndL{
-    float: left;
-    width: 35%;
-    @include bs;
-    padding: 200px 90px 0 0;
+    z-index: 299;
+    position: fixed;
+    left: 50%;
+    margin-left: -600px;
+    width: 330px;
+    top: 200px + 72px;
+    @media screen and (max-width:1600px){
+        top: 72px + 140px;
+    }
+    @media screen and (max-width:1366px){
+        top: 72px + 100px;
+    }
 }
 
 .hot-news{
@@ -996,6 +1005,10 @@
         border-bottom: 1px solid #ccc;
         padding-bottom: 20px;
         margin-bottom: 34px - 6px;
+        @media screen and (max-width:1366px){
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
     }
     a{
         display: block;
@@ -1012,6 +1025,9 @@
         }
         + a{
             margin-top: 23px;
+            @media screen and (max-width:1366px){
+                margin-top: 15px;
+            }
         }
         &:hover{
             color: $mc1;
@@ -1026,13 +1042,20 @@
 }
 
 .back{
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 60px + 72px;
     left: 15px;
     height: 24px;
     line-height: 24px;
     font-size: 18px;
     color: #383737;
+    @media screen and (max-width:1600px){
+        top: 72px + 40px;
+    }
+    @media screen and (max-width:1366px){
+        top: 72px + 20px;
+        font-size: 16px;
+    }
     .aw{
         @include di;
         height: 100%;
@@ -1044,6 +1067,46 @@
         color: $mc1;
         .aw{
             background-image: url('../img/组-1162.png');
+        }
+    }
+}
+
+.spe-news{
+    .item > a{
+        display: block;
+        position: relative;
+    }
+    .pai{
+        padding-bottom: (520 / 1440) * 100%;
+    }
+    .nowti{
+        font-size: 24px;
+        line-height: 40px;
+    }
+    .txts{
+        @include plr;
+        bottom: 0;
+        @include b5;
+        background: rgba(0,0,0,.4);
+        color: #fff;
+        padding: 14px 0;
+    }
+    .slick-dots{
+        left: auto;
+        right: 50%;
+        margin-right: -600px;
+        bottom: (68px - 6px) / 2;
+        li{
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            margin: 0 0 0 22px;
+            &:hover{
+                background: $mc1;
+            }
+        }
+        .slick-active{
+            background: $mc1;
         }
     }
 }

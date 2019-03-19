@@ -4,19 +4,40 @@
 @@include('./header.html',{
     "news": "act"
 })
-<div class="pbanner">
+<!-- <div class="pbanner">
     <div class="pic2"><img src="img/201712271137541761.png" alt=""></div>
     <div class="roll-news">
         <div class="pw">
             <div class="rn-list u-slick">
-                <div class="item"><a href="#" class="nowti">2018年新进29个城市 蓝光“投资铁军”加快推进全国布局</a></div>
+                <div class="item"><a href="#" class="nowti"></a></div>
                 <div class="item"><a href="#" class="nowti">2018年新进29个城市 蓝光“投资铁军”加快推进全国布局</a></div>
                 <div class="item"><a href="#" class="nowti">2018年新进29个城市 蓝光“投资铁军”加快推进全国布局</a></div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- pbanner -->
+<div class="spe-news u-slick">
+    <div class="item"><a href="news-detail.html">
+        <div class="pai"><img src="img/201712271137541761.png" alt=""></div>
+        <div class="txts">
+            <h3 class="nowti pw">当代公馆生活，就是蓝光“芙蓉”的模样</h3>
+        </div>
+    </a></div>
+    <div class="item"><a href="news-detail.html">
+        <div class="pai"><img src="img/640.webp.png" alt=""></div>
+        <div class="txts">
+            <h3 class="nowti pw">蓝光的这个年轻团队，对Impossibl说I’m possible</h3>
+        </div>
+    </a></div>
+    <div class="item"><a href="news-detail.html">
+        <div class="pai"><img src="img/640.webp (1).png" alt=""></div>
+        <div class="txts">
+            <h3 class="nowti pw">建设优秀上市公司，蓝光要“画”这样一张战略地图</h3>
+        </div>
+    </a></div>
+</div>
+<!-- spe-news -->
 <div class="nw1">
     <div class="pw">
         <div class="clearfix">
@@ -128,15 +149,12 @@
 <script src="js/page.js"></script>
 <script>
     $(function(){
-        $('.rn-list').slick({
+        $('.spe-news').slick({
             arrows: false,
             dots: true,
             autoplay: true,
-            autoplaySpeed: 0,
-            speed: 2000,
-            cssEase: 'linear',
-            pauseOnHover: false,
-            vertical: true
+            autoplaySpeed: 5000,
+            speed: 1000
         });
         $('.date-select').bind(_click, function() {
             $(this).toggleClass('act');

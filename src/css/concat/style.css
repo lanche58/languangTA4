@@ -109,7 +109,8 @@
   left: 50%;
   margin-left: -495px;
   bottom: 50px;
-  text-align: left; }
+  text-align: left;
+  z-index: 200; }
   .banner .slick-dots li {
     background: #fff;
     width: 6px;
@@ -470,7 +471,8 @@
 .footer {
   padding: 25px 0 45px 0;
   line-height: 24px;
-  color: #888; }
+  color: #888;
+  font-size: 12px; }
   .footer a {
     color: #888; }
     .footer a:hover {
@@ -481,8 +483,7 @@
     margin-top: 10px; }
 
 .f-cta {
-  overflow: hidden;
-  font-size: 12px; }
+  overflow: hidden; }
   .f-cta a {
     float: left; }
     .f-cta a + a {
@@ -773,7 +774,7 @@
 
 .ndR {
   float: right;
-  width: 65%;
+  width: 58.33%;
   padding: 45px 0 100px 0; }
 
 .nw2 {
@@ -796,10 +797,18 @@
     margin-top: 50px; }
 
 .ndL {
-  float: left;
-  width: 35%;
-  box-sizing: border-box;
-  padding: 200px 90px 0 0; }
+  z-index: 299;
+  position: fixed;
+  left: 50%;
+  margin-left: -600px;
+  width: 330px;
+  top: 272px; }
+  @media screen and (max-width: 1600px) {
+    .ndL {
+      top: 212px; } }
+  @media screen and (max-width: 1366px) {
+    .ndL {
+      top: 172px; } }
 
 .hot-news .ti {
   font-size: 18px;
@@ -808,6 +817,10 @@
   border-bottom: 1px solid #ccc;
   padding-bottom: 20px;
   margin-bottom: 28px; }
+  @media screen and (max-width: 1366px) {
+    .hot-news .ti {
+      margin-bottom: 25px;
+      padding-bottom: 10px; } }
 
 .hot-news a {
   display: block;
@@ -826,6 +839,9 @@
     transition: 300ms; }
   .hot-news a + a {
     margin-top: 23px; }
+    @media screen and (max-width: 1366px) {
+      .hot-news a + a {
+        margin-top: 15px; } }
   .hot-news a:hover {
     color: #F5851F; }
     .hot-news a:hover:before {
@@ -835,13 +851,20 @@
   line-height: 22px; }
 
 .back {
-  position: absolute;
-  top: 60px;
+  position: fixed;
+  top: 132px;
   left: 15px;
   height: 24px;
   line-height: 24px;
   font-size: 18px;
   color: #383737; }
+  @media screen and (max-width: 1600px) {
+    .back {
+      top: 112px; } }
+  @media screen and (max-width: 1366px) {
+    .back {
+      top: 92px;
+      font-size: 16px; } }
   .back .aw {
     display: inline-block;
     vertical-align: bottom;
@@ -853,3 +876,39 @@
     color: #F5851F; }
     .back:hover .aw {
       background-image: url("../img/组-1162.png"); }
+
+.spe-news .item > a {
+  display: block;
+  position: relative; }
+
+.spe-news .pai {
+  padding-bottom: 36.11111%; }
+
+.spe-news .nowti {
+  font-size: 24px;
+  line-height: 40px; }
+
+.spe-news .txts {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../images/black5.png);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 14px 0; }
+
+.spe-news .slick-dots {
+  left: auto;
+  right: 50%;
+  margin-right: -600px;
+  bottom: 31px; }
+  .spe-news .slick-dots li {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    margin: 0 0 0 22px; }
+    .spe-news .slick-dots li:hover {
+      background: #F5851F; }
+  .spe-news .slick-dots .slick-active {
+    background: #F5851F; }
