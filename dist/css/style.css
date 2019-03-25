@@ -782,12 +782,11 @@ a.pswp__share--download:hover{background:#ddd}
 .ix-ab .txts{overflow:hidden;padding-top:25px}
 .ix-ab .nowti{color:#5a5a5a;font-size:18px;font-weight:700;margin-bottom:30px}
 .ix-ab .tx{height:72px;margin-bottom:20px}
-.ab-data{position:relative;width:167px;height:237px;-moz-box-sizing:border-box;box-sizing:border-box;padding:55px 15px 0 30px;background:url("../img/联合 6.png") no-repeat;font-size:12px;color:#fff;margin-top:-20px}
+.ab-data{position:relative;width:167px;height:237px;-moz-box-sizing:border-box;box-sizing:border-box;padding:41px 15px 0 35px;background:url("../img/联合 6.png") no-repeat;font-size:12px;color:#28315e;margin-top:-20px}
 .ab-data:before{content:"";position:absolute;top:10px;left:11px;width:4px;height:10px;background:url("../img/路径 18.png") no-repeat left bottom}
-.ab-data .name{font-size:13px;color:#8f877f}
-.ab-data .num{margin-top:4px;line-height:1}
-.ab-data .num span{position:relative;font-size:45px;letter-spacing:-5px}
-.ab-data .num span:before{content:"";position:absolute;top:0;left:100%;margin-left:10px;margin-top:8px;width:12px;height:12px;background:url("../img/蒙版组 11.png") no-repeat}
+.ab-data .num{margin-top:27px;line-height:1}
+.ab-data .num span{display:block;position:relative;font-size:40px}
+.ab-data .num span:before{content:"";position:absolute;top:0;right:100%;margin-top:5px;width:12px;height:12px;background:url("../img/蒙版组 11.png") no-repeat}
 .ab-data .time{position:absolute;left:30px;right:15px;bottom:43px}
 .ix-more{display:block;font-size:12px;font-weight:700;line-height:16px;color:#aaa;-webkit-transition:.3s;-moz-transition:.3s;transition:.3s}
 .ix-more .aw{display:inline-block;vertical-align:bottom;width:6px;height:16px;margin-left:6px;background:url("../img/组 116.png") no-repeat center}
